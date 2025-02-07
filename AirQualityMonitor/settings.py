@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'AirAPI',
     'rest_framework',
     'drf_yasg',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -106,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 # Internationalization
