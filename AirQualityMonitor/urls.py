@@ -1,5 +1,6 @@
 from django.urls import path
-from accounts.views import login_view
+from accounts.views import login_view, signup_view
+
 """
 URL configuration for AirQualityMonitor project.
 
@@ -24,5 +25,6 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('login/', login_view, name='login'),
     path('' , login_view , name='home') ,
+    path('signup/', signup_view, name='signup'),
 
 ]
