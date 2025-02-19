@@ -1,5 +1,5 @@
 from django.urls import path
-from accounts.views import login_view, signup_view
+from accounts.views import login_view, signup_view, data_view, trends_view
 
 """
 URL configuration for AirQualityMonitor project.
@@ -18,13 +18,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.template.context_processors import request
-# from django.contrib import admin
+from django.contrib import admin
 
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('login/', login_view, name='login'),
     path('' , login_view , name='home') ,
     path('signup/', signup_view, name='signup'),
+    path('data/', data_view, name = 'data'),
+    path('trends/', trends_view, name = 'trends'),
+
 
 ]
