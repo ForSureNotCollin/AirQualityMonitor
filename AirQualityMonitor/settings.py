@@ -78,16 +78,16 @@ WSGI_APPLICATION = 'AirQualityMonitor.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'laqhdb',
-        'USER' : 'root' ,
-        'PASSWORD' : "M0nty555!BreCol3" ,
-        'HOST' : 'localhost',
-        'PORT' : '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'laqhdb',
+#         'USER' : 'root' ,
+#         'PASSWORD' : "M0nty555!BreCol3" ,
+#         'HOST' : 'localhost',
+#         'PORT' : '3306',
+#     }
+# }
 
 
 # Password validation
