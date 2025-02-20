@@ -1,0 +1,63 @@
+/* Reset and base styles */
+html, body{
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Gradient background and center content with flexbox */
+body{
+  background: linear-gradient(to bottom right, #808080, #008000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+    background-color: lightgreen;
+    opacity: 0.25;
+}
+
+.navbar{
+    background-color: grey;
+
+}
+
+.grid-container{
+    display: grid;
+    grid-auto-columns: 400px;
+    grid-auto-rows: 400px;
+    gap: 3em;
+    grid-template-areas:
+    "box-1 box-2 box-2 box-3"
+    "box-1 box-4 box-5 box-5";
+}
+
+.grid-container div:hover{
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media(max-width: 42em){
+    .grid-container{
+        grid-template-areas:
+        "box-1 box-3"
+        "box-1 box-2"
+        "box-5 box-2"
+        "box-5 box-4";
+    }
+}
+
+@media(max-width: 56em){
+    .grid-container{
+        grid-template-areas:
+        "box-1 box-2 box-2"
+        "box-1 box-3 box-4"
+        "box-5 box-5 box-4";
+    }
+}
+
+p{
+    text-align: center;
+    color: black;
+}

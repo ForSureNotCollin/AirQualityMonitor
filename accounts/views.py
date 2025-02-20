@@ -45,6 +45,10 @@ def signup_view(request):
             messages.error(request, f"An error occurred: {e}")
     return render(request, 'accounts/login.html')
 
+def home_view(request):
+    if request.method == 'GET':
+        return render(request, 'accounts/home.html')
+
 def data_view(request):
     if request.method == 'GET':
         return render(request, 'accounts/dataPage.html')
