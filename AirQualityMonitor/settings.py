@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AirQualityMonitor',
+    'AirAPI',
+    'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
