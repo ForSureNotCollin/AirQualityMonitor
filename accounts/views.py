@@ -1,12 +1,10 @@
 # accounts/views.py
 
-from django.contrib.auth import login
+from django.contrib.auth import login, get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import LoginRecord
-from django.contrib.auth.models import User
-
 
 def login_view(request):
     if request.method == 'POST':
@@ -16,7 +14,7 @@ def login_view(request):
             user = form.get_user()
             login(request, user)
 
-            # Create a new login record
+            # Create a new login record using the correct user model
             ip_address = request.META.get('REMOTE_ADDR')  # Capture the client IP address
             record = LoginRecord(user=user, ip_address=ip_address)
             record.save()
@@ -37,21 +35,28 @@ def signup_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         # Add any additional validations here
+        
         try:
-            User.objects.create_user(username=username, email=email, password=password)
+            # Use the custom user model defined by AUTH_USER_MODEL
+            UserModel = get_user_model()  
+            UserModel.objects.create_user(username=username, email=email, password=password)
             messages.success(request, "Account created successfully!")
             return redirect('login')  # Redirect to login or another page
         except Exception as e:
             messages.error(request, f"An error occurred: {e}")
+            
     return render(request, 'accounts/login.html')
+
 
 def home_view(request):
     if request.method == 'GET':
         return render(request, 'accounts/home.html')
 
+
 def data_view(request):
     if request.method == 'GET':
         return render(request, 'accounts/dataPage.html')
+
 
 def trends_view(request):
     if request.method == 'GET':
