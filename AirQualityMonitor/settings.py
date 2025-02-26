@@ -59,7 +59,8 @@ ROOT_URLCONF = 'AirQualityMonitor.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates']
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,28 +76,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'AirQualityMonitor.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+#Database
+#https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# Uncomment and update for MySQL:
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'laqhdb',
-#         'USER': 'root',
-#         'PASSWORD': "M0nty555!BreCol3",
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#     }
-# }
-
-# Using SQLite for development:
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'AQMDB',
+        'USER' : 'p304' ,
+        'PASSWORD' : 'capstone' ,
+        'HOST' : '127.0.0.1',
+        'PORT' : '3307',
+     }
+ }
 
 
 # Password validation
