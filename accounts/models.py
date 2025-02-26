@@ -12,7 +12,6 @@ class CustomUser(AbstractUser):
         help_text='The groups this user belongs to.',
         verbose_name='groups'
     )
-
     # Override the user_permissions field similarly.
     user_permissions = models.ManyToManyField(
         Permission,
