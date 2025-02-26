@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage | AQM</title>
+    <link href="{% static 'home-style.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Within each of these divs we can display the necessary content -->
+        <div class="box" style="grid-area: box-1"> <p> Weather </p> </div>
+        <div class="box" style="grid-area: box-2"> <p> Air Quality Readings </p> </div>
+        <div class="box" style="grid-area: box-3"> <p> Personal Account Info </p> </div>
+        <div class="box" style="grid-area: box-4"> <p> ChatBot </p></div>
+        <div class="box" style="grid-area: box-5"> <p> Trends </p> </div>
+    </div>
+
+</body>
+</html>
